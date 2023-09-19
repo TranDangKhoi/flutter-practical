@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_practical/detailsPage.dart';
 import 'package:flutter_practical/destinationServices.dart';
@@ -30,10 +32,13 @@ class _HomepageState extends State<Homepage> {
                 return ListView.separated(
                     itemBuilder: (context, index) {
                       Destination destination = snapshot.data![index];
+                      // convert destination name to utf 8
+                      var destinationName = utf8
+                          .decode(destination.destinationName.runes.toList());
                       return ListTile(
                         leading:
                             Image.network(destination.destinationThumbnail),
-                        title: Text(destination.destinationName),
+                        title: Text(destinationName),
                         subtitle:
                             Text('Rating:${destination.destinationRating}'),
                         onTap: () {
