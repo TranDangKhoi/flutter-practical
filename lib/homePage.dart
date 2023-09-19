@@ -20,7 +20,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("User Details Page")),
+        appBar: AppBar(title: const Text("Tours Page")),
         body: Center(
           child: FutureBuilder<List<Destination>>(
             future: futureDestinations,
