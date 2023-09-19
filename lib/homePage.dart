@@ -31,6 +31,8 @@ class _HomepageState extends State<Homepage> {
                     itemBuilder: (context, index) {
                       Destination destination = snapshot.data![index];
                       return ListTile(
+                        leading:
+                            Image.network(destination.destinationThumbnail),
                         title: Text(destination.destinationName),
                         subtitle:
                             Text('Rating:${destination.destinationRating}'),
